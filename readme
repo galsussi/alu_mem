@@ -1,0 +1,15 @@
+
+
+compile:
+vcs -sverilog -full64 -o mem_alu.simv -V -kdb -f mem_alu.fl -debug_access+all &
+
+run batch:
+./mem_alu.simv -ucli -do run.do &
+
+open waves:
+verdi -ssf test.fsdb &
+
+
+
+run interactive:
+./cntr.simv -verdi &
