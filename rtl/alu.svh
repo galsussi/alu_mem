@@ -3,7 +3,7 @@ module alu(
 );
     localparam ERROR_CODE = 16'hDEAD;
     logic [2*i_inf.DATA_WIDTH-1:0] result;
-    always@(posedge i_inf.clk, posedge i_inf.reset) begin
+    always_ff@(posedge i_inf.clk, posedge i_inf.reset) begin
         if(i_inf.reset) begin 
             result<= '0;
         end
